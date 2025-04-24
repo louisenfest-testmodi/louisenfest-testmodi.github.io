@@ -281,11 +281,11 @@ section h2::after {
 
 
 .bg-2-reg .main-nav ul {
-        border-left: 1px solid lightgrey;
-        padding-left: 12px;
-        margin-left: 270px;
-        margin-top: -30px;
-        font-size: 17px
+    border-left: 1px solid lightgrey;
+    padding-left: 12px;
+    margin-left: 265px;
+    margin-top: -45px;
+    font-size: 17px;
 }
 
 /* ================
@@ -310,7 +310,6 @@ section h2::after {
 }
 
 .nachbarsfest {
-    padding-top: 70px;
     font-size: 40px;
 }
 
@@ -321,7 +320,7 @@ section h2::after {
     background-image: url('b/bg-2.png');
     background-repeat: no-repeat;
     background-size: contain;
-    background-position: right 5px bottom 40px;
+    background-position: right 5px bottom -10px;
     height: 100vh;
     opacity: 1;
     transition: opacity 0.1s ease-out;
