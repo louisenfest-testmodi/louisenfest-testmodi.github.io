@@ -320,7 +320,7 @@ section h2::after {
     background-image: url('b/bg-2.png');
     background-repeat: no-repeat;
     background-size: contain;
-    background-position: right 5px bottom -10px;
+    background-position: right 5px bottom 90px;
     height: 100vh;
     opacity: 1;
     transition: opacity 0.1s ease-out;
