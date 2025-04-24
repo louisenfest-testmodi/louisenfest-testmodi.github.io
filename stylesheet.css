@@ -89,6 +89,14 @@ h2::before {
     height: 300px;
 }
 
+.toggle-png {
+    width: 15px;
+    height: auto;
+    margin-bottom: 3px;
+    margin-left: 10px;
+    display: inline-block;
+}
+
 #buehnen {
     font-size: 20px;
     font-weight: bold;
@@ -310,6 +318,7 @@ section h2::after {
 }
 
 .nachbarsfest {
+    padding-top: 20px;
     font-size: 40px;
 }
 
@@ -320,7 +329,7 @@ section h2::after {
     background-image: url('b/bg-2.png');
     background-repeat: no-repeat;
     background-size: contain;
-    background-position: right 5px bottom 90px;
+    background-position: right 5px bottom 130px;
     height: 100vh;
     opacity: 1;
     transition: opacity 0.1s ease-out;
