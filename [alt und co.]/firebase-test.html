@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>Louisenfest – Programm</title>
+  <style>
+    pm-section {
+      margin-bottom: 30px;
+    }
+
+    h2 {
+      font-size: 1.5em;
+      margin-bottom: 0.5em;
+    }
+
+    .act {
+      display: flex;
+      gap: 1em;
+      padding: 4px 0;
+    }
+
+    .time {
+      width: 140px;
+      font-family: monospace;
+      color: #666;
+    }
+
+    .band {
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <h1>📅 Line-Up</h1>
+
+  <pm-section id="hauptbuehne-section">
+    <h2>Hauptbühne</h2>
+    <div id="hauptbuehne"></div>
+  </pm-section>
+
+  <pm-section id="nebenbuehne-section">
+    <h2>Nebenbühne</h2>
+    <div id="nebenbuehne"></div>
+  </pm-section>
+
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-app.js";
+    import { getFirestore, collection, getDocs } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-firestore.js";
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyBnEnZrko6pqy5Q5ZAYlo3iW30hc1F_oV8",
+      authDomain: "programm-louisenfest.firebaseapp.com",
+      projectId: "programm-louisenfest",
+      storageBucket: "programm-louisenfest.firebasestorage.app",
+      messagingSenderId: "385737458779",
+      appId: "1:385737458779:web:f80e7317d6eb94f446ab7e"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const db = getFirestore(app);
+
+    function formatTime(ts) {
+      const date = ts.toDate();
+      return date.toLocaleTimeString('de-DE', {
+        hour: '2-digit',
+        minute: '2-digit',
+      });
+    }
+
+    async function showLineup() {
+      const snapshot = await getDocs(collection(db, "acts"));
+      const acts = [];
+
+      snapshot.forEach(doc => {
+        const data = doc.data();
+        acts.push({
+          band: data.band,
+          stage: data.stage,
+          start: data.start,
+          end: data.end,
+        });
+      });
+
+      const stageContainers = {
+        "Hauptbühne": document.getElementById("hauptbuehne"),
+        "Nebenbühne": document.getElementById("nebenbuehne"),
+      };
+
+      const grouped = {
+        "Hauptbühne": [],
+        "Nebenbühne": []
+      };
+
+      acts.forEach(act => {
+        if (grouped[act.stage]) {
+          grouped[act.stage].push(act);
+        }
+      });
+
+      for (const stage in grouped) {
+        grouped[stage].sort((a, b) => a.start.seconds - b.start.seconds);
+
+        grouped[stage].forEach(act => {
+          const actDiv = document.createElement("div");
+          actDiv.className = "act";
+
+          const timeDiv = document.createElement("div");
+          timeDiv.className = "time";
+          timeDiv.textContent = `${formatTime(act.start)} - ${formatTime(act.end)} Uhr`;
+
+          const bandDiv = document.createElement("div");
+          bandDiv.className = "band";
+          bandDiv.textContent = act.band;
+
+          actDiv.appendChild(timeDiv);
+          actDiv.appendChild(bandDiv);
+          stageContainers[stage].appendChild(actDiv);
+        });
+      }
+    }
+
+    showLineup();
+  </script>
+</body>
+</html>
