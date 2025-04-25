@@ -58,6 +58,7 @@ h1 {
     font-size: 40px;
     font-family: dm serif display;
     letter-spacing: 0.05em;
+    margin-top: 10px
 }
 
 h2::before {

@@ -66,7 +66,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   triggers.forEach(trigger => {
     const menu = trigger.nextElementSibling;
-    const svg = trigger.querySelector('.toggle-svg');
+    const png = trigger.querySelector('.toggle-png');
 
     const getDefaultOpen = () => {
       const attr = trigger.getAttribute('data-default-open');
@@ -90,22 +90,11 @@ document.addEventListener('DOMContentLoaded', () => {
       menu.style.display = isExpanded ? 'none' : displayType;
       menu.dataset.expanded = (!isExpanded).toString();
 
-      if (svg) {
-        svg.src = !isExpanded ? '../b/toggle-down.svg' : '../b/toggle-up.svg';
+      if (png) {
+        png.src = !isExpanded ? '../b/toggle-down.png' : '../b/toggle-up.png';
       }
     });
 
     setInitialState();
   });
-});
-
-const krone = document.querySelector('#krone-bild');
-const links = document.querySelectorAll('.main-nav ul li a');
-
-links.forEach(link => {
-  if (link.classList.contains('selected')) {
-    const rect = link.getBoundingClientRect();
-    const parentRect = document.querySelector('.main-nav').getBoundingClientRect();
-    krone.style.left = `${rect.left - parentRect.left}px`;
-  }
 });

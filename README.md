@@ -1,6 +1,6 @@
+# louisenfest.github.io
 Hi, <br>
-dies ist eine inoffizielle Kopie der Website für das Louisenfest Dresden 
-Neustadt und dient zum Testen neuer Features. Auch hier gilt: der Code ist noch relativ jung, ich bitte folglich um Gnade.
+dies ist eine inoffizielle Website für das Louisenfest DD Neustadt 2025 - sie muss von den Veranstalter:innen noch abgesegnet werden und ist relativ jung, also bitte ich um Nachsichtigkeit bezüglich möglicher Ineffizienz. (; <br>
+VG, JR <br><br>
 
-Eine SECURITY.MD wird wahrscheinlich nicht mehr folgen.
-VG, JR.
+Ps. Eine Kontaktmöglichkeit außerhalb Githubs wird womöglich noch folgen.
