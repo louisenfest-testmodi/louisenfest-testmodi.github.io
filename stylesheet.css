@@ -286,7 +286,7 @@ section h2::after {
     align-items: flex-start;
     background-image: url('b/bg-2-dp.png');
     background-repeat: no-repeat;
-    background-size: 130%;
+    background-size: 525px;
     background-position: left -20px top -30px;
     opacity: 1;
     transition: opacity 0.1s ease-out;
