@@ -98,3 +98,13 @@ document.addEventListener('DOMContentLoaded', () => {
     setInitialState();
   });
 });
+
+// Debug mailto
+document.addEventListener('DOMContentLoaded', function () {
+  console.log("DOM vollständig geladen");
+  // Alle Links durchlaufen und überprüfen
+  const links = document.querySelectorAll('a');
+  links.forEach(link => {
+    console.log("Gefundener Link: ", link.href);
+  });
+});
