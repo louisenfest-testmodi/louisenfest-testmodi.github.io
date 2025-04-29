@@ -24,25 +24,23 @@
     const FALLBACK_URL = "/fallback.html";
 
     (function redirectToFallback() {
-if (FALLBACK_MODE && !window.location.pathname.endsWith("fallback.html")) {
-  // Fallback-Nachricht vorbereiten
-  document.getElementById("fallback-message").value = "Fallback aktiviert auf " + window.location.href;
-  document.getElementById("fallback-time").value = new Date().toLocaleString();
+      if (FALLBACK_MODE && !window.location.pathname.endsWith("fallback.html")) {
+        // Fallback-Nachricht vorbereiten
+        document.getElementById("fallback-message").value = "Fallback aktiviert auf " + window.location.href;
+        document.getElementById("fallback-time").value = new Date().toLocaleString();
 
-  // Mail senden, danach weiterleiten
-  emailjs.sendForm("default_service", "template_29o4mr2", "#fallback-form")
-    .then(() => {
-      console.log("Fallback-E-Mail gesendet.");
-      // Jetzt erst weiterleiten!
-      window.location.replace(FALLBACK_URL);
-    })
-    .catch((error) => {
-      console.warn("Fehler beim Senden:", error);
-      // Optional trotzdem weiterleiten
-      window.location.replace(FALLBACK_URL);
-    });
-}
-      
+        // Mail senden, danach weiterleiten
+        emailjs.sendForm("default_service", "template_29o4mr2", "#fallback-form")
+          .then(() => {
+            console.log("Fallback-E-Mail gesendet.");
+            window.location.replace(FALLBACK_URL);
+          })
+          .catch((error) => {
+            console.warn("Fehler beim Senden:", error);
+            window.location.replace(FALLBACK_URL);
+          });
+      }
+    })();
   </script>
 
 </body>
