@@ -1,0 +1,51 @@
+[
+  {
+    "band": "slin shady",
+    "start": "2025-06-20T00:00:00.000Z",
+    "end": "2025-06-20T00:00:00.000Z",
+    "stage": "A-Park",
+    "info": "Punk / @slin5shady"
+  },
+  {
+    "band": "TANCRED",
+    "start": "2025-06-20T00:00:00.000Z",
+    "end": "2025-06-20T00:00:00.000Z",
+    "stage": "A-Park",
+    "info": "Punk / @antyn.tancred"
+  },
+  {
+    "band": "ARISTOMANE",
+    "start": "2025-06-20T00:00:00.000Z",
+    "end": "2025-06-20T00:00:00.000Z",
+    "stage": "A-Park",
+    "info": "Punk / @aris.to_mane"
+  },
+  {
+    "band": "B-Saite",
+    "start": "2025-06-20T00:00:00.000Z",
+    "end": "2025-06-20T00:00:00.000Z",
+    "stage": "A-Park",
+    "info": "Punk / @bsaite"
+  },
+  {
+    "band": "Bullock",
+    "start": "2025-06-20T00:00:00.000Z",
+    "end": "2025-06-20T00:00:00.000Z",
+    "stage": "A-Park",
+    "info": "Punk / @bullovk.band161"
+  }
+  {
+    "band": "Disphoric",
+    "start": "2025-06-20T00:00:00.000Z",
+    "end": "2025-06-20T00:00:00.000Z",
+    "stage": "A-Park",
+    "info": "Punk / @dysphoric44crustgrind"
+  }
+  {
+    "band": "Doublewide",
+    "start": "2025-06-20T00:00:00.000Z",
+    "end": "2025-06-20T00:00:00.000Z",
+    "stage": "A-Park",
+    "info": "Punk / @doublewide_band"
+  }
+]

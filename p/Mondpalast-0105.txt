@@ -1,0 +1,56 @@
+[
+  {
+    "band": "Alina Delsagno",
+    "start": "2025-06-20T00:00:00.000Z",
+    "end": "2025-06-20T00:00:00.000Z",
+    "stage": "Mondpalast",
+  },
+  {
+    "band": "Mango Tango",
+    "start": "2025-06-20T00:00:00.000Z",
+    "end": "2025-06-20T00:00:00.000Z",
+    "stage": "Mondpalast",
+  },
+  {
+    "band": "sugar ko:ma",
+    "start": "2025-06-20T00:00:00.000Z",
+    "end": "2025-06-20T00:00:00.000Z",
+    "stage": "Mondpalast",
+  },
+  {
+    "band": "DJ Luna Latina Chikita",
+    "start": "2025-06-20T00:00:00.000Z",
+    "end": "2025-06-20T00:00:00.000Z",
+    "stage": "Mondpalast",
+  },
+  {
+    "band": "Stefan Hasselmann",
+    "start": "2025-06-21T00:00:00.000Z",
+    "end": "2025-06-21T00:00:00.000Z",
+    "stage": "Mondpalast",
+  },
+  {
+    "band": "Rethberg ragtime Trio",
+    "start": "2025-06-21T00:00:00.000Z",
+    "end": "2025-06-21T00:00:00.000Z",
+    "stage": "Mondpalast",
+  },
+  {
+    "band": "liebesFräulein",
+    "start": "2025-06-21T00:00:00.000Z",
+    "end": "2025-06-21T00:00:00.000Z",
+    "stage": "Mondpalast",
+  },
+  {
+    "band": "Korn & Sprite",
+    "start": "2025-06-21T00:00:00.000Z",
+    "end": "2025-06-21T00:00:00.000Z",
+    "stage": "Mondpalast",
+  },
+  {
+    "band": "Die jungs von der Disko",
+    "start": "2025-06-21T00:00:00.000Z",
+    "end": "2025-06-21T00:00:00.000Z",
+    "stage": "Mondpalast",
+  },
+]
