@@ -229,7 +229,7 @@ section h2::after {
     padding-left: 10px;
 }
 
-#mondpalast-section h3, #a-park-section h3 {
+#mondpalast-section h3, #a-park-section h3, #next-five-section h3 {
     font-weight: normal;
     font-style: italic;
     border: 1px dashed white;
@@ -240,6 +240,29 @@ section h2::after {
     text-align: center;
     padding: 5px;
     margin-top: 12%;
+}
+
+#next-five-events .act {
+    display: flex;
+    justify-content: flex-start;
+    gap: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+#next-five-events .time,
+#next-five-events .stage,
+#next-five-events .band {
+    flex: none;
+}
+
+#next-five-events .stage,
+#next-five-events .band {
+    border-left: 1px dashed white;
+    padding-left: 10px;
+}
+
+#next-five-events .time {
+    max-width: 15%;
 }
 
 
@@ -494,6 +517,14 @@ section h2::after {
 
     .day-block {
         flex: 0 1 20rem;
+    }
+
+    #next-five-events .act {
+        gap: 5rem;
+    }
+
+    #next-five-events .time {
+        max-width: 5%;
     }
 
     .footer-dp {
