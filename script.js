@@ -1,7 +1,7 @@
 // script.js   [unnötige Logs entfernen]
 
 // Fallback
-const ENABLE_FALLBACK = true;
+const ENABLE_FALLBACK = false;
 
 (function handleFallbackRedirect() {
   const currentPath = window.location.pathname;
