@@ -1,5 +1,22 @@
-// script.js
+// script.js   [unnötige Logs entfernen]
 
+// Fallback
+const ENABLE_FALLBACK = false;
+
+(function redirectToFallback() {
+  if (ENABLE_FALLBACK) {
+    const currentPath = window.location.pathname;
+    const alreadyOnFallback = currentPath.endsWith('fallback.html') || currentPath.includes('fallback');
+
+    if (!alreadyOnFallback) {
+      // Weiterleitung zur Fallback-Seite
+      window.location.href = 'file:///C:/Users/49176/Downloads/Jeremias%20Website/Louisenfest/t/fallback.html';
+    }
+  }
+})();
+
+
+// bg
 document.addEventListener('DOMContentLoaded', function () {
   const bg2Mobil = document.getElementById('bg2-mobil');
   const bg2MobilReg = document.getElementById('bg2-mobil-reg');
@@ -99,12 +116,13 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
-// Debug mailto
-document.addEventListener('DOMContentLoaded', function () {
-  console.log("DOM vollständig geladen");
-  // Alle Links durchlaufen und überprüfen
-  const links = document.querySelectorAll('a');
-  links.forEach(link => {
-    console.log("Gefundener Link: ", link.href);
-  });
+const krone = document.querySelector('#krone-bild');
+const links = document.querySelectorAll('.main-nav ul li a');
+
+links.forEach(link => {
+  if (link.classList.contains('selected')) {
+    const rect = link.getBoundingClientRect();
+    const parentRect = document.querySelector('.main-nav').getBoundingClientRect();
+    krone.style.left = `${rect.left - parentRect.left}px`;
+  }
 });
