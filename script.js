@@ -1,20 +1,22 @@
 // script.js   [unnötige Logs entfernen]
 
 // Fallback
-const ENABLE_FALLBACK = false;
+const ENABLE_FALLBACK = true;
 
-(function redirectToFallback() {
-  if (ENABLE_FALLBACK) {
-    const currentPath = window.location.pathname;
-    const alreadyOnFallback = currentPath.endsWith('fallback.html') || currentPath.includes('fallback');
+(function handleFallbackRedirect() {
+  const currentPath = window.location.pathname;
+  const isOnFallback = currentPath.endsWith('fallback.html') || currentPath.includes('fallback');
 
-    if (!alreadyOnFallback) {
-      // Weiterleitung zur Fallback-Seite
-      window.location.href = 'file:///C:/Users/49176/Downloads/Jeremias%20Website/Louisenfest/t/fallback.html';
-    }
+  if (ENABLE_FALLBACK && !isOnFallback) {
+    // Weiterleitung zur Fallback-Seite
+    window.location.href = 'fallback.html'; // relativer Pfad empfohlen
+  }
+
+  if (!ENABLE_FALLBACK && isOnFallback) {
+    // Wenn Fallback deaktiviert ist, aber man sich noch auf der Fallback-Seite befindet:
+    window.location.href = '../index.html'; // oder ein anderer Pfad zur Homepage
   }
 })();
-
 
 // bg
 document.addEventListener('DOMContentLoaded', function () {
