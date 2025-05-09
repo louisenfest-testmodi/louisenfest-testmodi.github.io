@@ -117,36 +117,11 @@
             </ul>
     </footer>
 
-  <form id="newsletterForm">
-    <input type="email" id="emailInput" placeholder="Deine E-Mail" required />
-    <button type="submit">Anmelden</button>
-  </form>
-  <p id="statusMsg"></p>
+<iframe
+  src="https://buttondown.email/Player33?as_embed=true"
+  style="border:0; width:100%; height:200px;">
+</iframe>
 
-  </body>
-        
-<script>
-  const form = document.getElementById("newsletterForm");
-  const emailInput = document.getElementById("emailInput");
-  const statusMsg = document.getElementById("statusMsg");
 
-  form.addEventListener("submit", async (e) => {
-    e.preventDefault();
-    const email = emailInput.value;
-
-    const response = await fetch("../api/buttondown-proxy.php", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ email })
-    });
-
-    if (response.ok) {
-      statusMsg.textContent = "Danke! Du bist jetzt angemeldet.";
-      form.reset();
-    } else {
-      const error = await response.json();
-      statusMsg.textContent = "Fehler: " + (error?.email || "Bitte versuche es erneut.");
-    }
-  });
-</script>
+</body>
 </html>
