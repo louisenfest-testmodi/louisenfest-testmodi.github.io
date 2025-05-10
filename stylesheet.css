@@ -24,17 +24,17 @@ main {
         cursor: pointer;
     }
 
-    .bg-2-grundinfo a, footer a {
-        text-decoration: none; 
+    .bg-2-grundinfo a, footer a, .band a {
+        text-decoration: none;
         position: relative;
         transition: transform 0.4s ease-out;
     }
 
-    .bg-2-grundinfo a:hover::after, footer a:hover::after {
+    .bg-2-grundinfo a:hover::after, footer a:hover::after, .band a:hover::after {
         transform: scaleX(1);
     }
 
-    .bg-2-grundinfo a::after, footer a::after {
+    .bg-2-grundinfo a::after, footer a::after, .band a::after {
         content: "";
         position: absolute;
         bottom: 0;
@@ -46,7 +46,6 @@ main {
         transform-origin: bottom left;
         transition: transform 0.4s ease-out;
     }
-
 
     .rainbow-text {
       background: linear-gradient(45deg, red, orange, yellow, green, blue, indigo, violet);
@@ -136,7 +135,7 @@ h2::before {
     margin-right: 5%;
     height: 1px;
     background-color: white;
-    margin-top: 80px;
+    margin-top: 30px;
 }
 
 .footer-dp {
@@ -167,7 +166,33 @@ footer ul {
 footer a {
     color: white;
     text-decoration: none;
-}  
+}
+
+.sub-form {
+    background-color: transparent;
+    margin: 0 auto;
+    border-top: 1px solid white;
+    max-width: 90%;
+    text-align: center;  
+    color: white;  
+    margin-top: 80px;
+}
+
+.sub-form input:nth-of-type(3) {
+    border: 1px solid white;
+    border-radius: 2px;
+    background-color: transparent;
+    color: white;
+    margin-top: 10px;
+}
+
+.sub-form input:nth-of-type(3):hover {
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+.sub-form input:nth-of-type(3):focus {
+    border: 1px dashed white;
+}
 
 .krone-impressum, .krone-kontakt {
     display: none;
@@ -229,7 +254,7 @@ section h2::after {
     padding-left: 10px;
 }
 
-#mondpalast-section h3, #a-park-section h3, #next-five-section h3 {
+.programm h3 {
     font-weight: normal;
     font-style: italic;
     border: 1px dashed white;
@@ -467,8 +492,7 @@ section h2::after {
     main #reg {
         position: relative;
         z-index: 5;
-        margin-top: -40%;
-        margin-left: 6.2%;
+        margin-top: -30%;
         left: 210px;
         width: 80%;
         padding-left: 23px;
@@ -497,26 +521,32 @@ section h2::after {
         height: 600px;
     }
 
-    .horizontale-linie {
-        margin-top: 300px;
-    }
-
     .bg-2-grundinfo table tr:nth-of-type(1) td:nth-of-type(3), 
     .bg-2-grundinfo table tr:nth-of-type(2) td:nth-of-type(3) {
         max-width: 18px;
     }
 
-    #a-park-section h3, #mondpalast-section h3 {
-        margin-top: 0%;
+    .programm h3 {
+        margin-top: -5%;
     }
 
     .day-container {
-        display: flex;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
         gap: 2rem;
+        margin-top: 2rem;
     }
 
     .day-block {
-        flex: 0 1 20rem;
+        padding: 1rem;
+    }
+
+    #mondpalast-section h3, #a-park-section h3, #next-five-section h3 {
+        margin-top: -5%;
+    }
+
+    #a-park-section .day-block {        
+        max-width: 40%;
     }
 
     #next-five-events .act {
@@ -527,6 +557,10 @@ section h2::after {
         max-width: 5%;
     }
 
+    .horizontale-linie {
+        margin-top: 80px;
+    }
+
     .footer-dp {
         display: block;
     }
@@ -534,6 +568,16 @@ section h2::after {
     .footer-m {
         display: none;
     }
+
+    .sub-form {
+        margin-top: 300px;
+        max-width: 30%;
+    }
+
+    .sub-form input:nth-of-type(3) {
+        margin-top: 0px;
+    }
+    
 
 /* Header */
     .bg-2-section-reg .bg-2 {
@@ -616,7 +660,7 @@ section h2::after {
 
     .bg-2-section .bg-2-grundinfo {
         display: inline-flex;
-        margin-left: 50%;
+        margin-left: 40%;
         margin-top: 0px;
         max-width: 80%;
         background-color: rgba(255, 255, 255, 0.15);
@@ -654,8 +698,8 @@ section h2::after {
 
     /**/
     .bg-2-section .bg-2 .main-nav {
-        margin-top: 300px;
-        margin-left: 50%;
+        margin-top: 100px;
+        margin-left: 40%;
         display: inline-flex;
         font-size: 17.5px;
     }
