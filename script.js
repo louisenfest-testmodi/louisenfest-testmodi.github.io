@@ -1,22 +1,19 @@
-// script.js   [unnötige Logs entfernen]
+// script.js
 
 // Fallback
 const ENABLE_FALLBACK = false;
 
-(function handleFallbackRedirect() {
-  const currentPath = window.location.pathname;
-  const isOnFallback = currentPath.endsWith('fallback.html') || currentPath.includes('fallback');
+(function redirectToFallback() {
+  if (ENABLE_FALLBACK) {
+    const currentPath = window.location.pathname;
+    const alreadyOnFallback = currentPath.endsWith('fallback.html') || currentPath.includes('fallback');
 
-  if (ENABLE_FALLBACK && !isOnFallback) {
-    // Weiterleitung zur Fallback-Seite
-    window.location.href = 'fallback.html'; // relativer Pfad empfohlen
-  }
-
-  if (!ENABLE_FALLBACK && isOnFallback) {
-    // Wenn Fallback deaktiviert ist, aber man sich noch auf der Fallback-Seite befindet:
-    window.location.href = '../index.html'; // oder ein anderer Pfad zur Homepage
+    if (!alreadyOnFallback) {
+      window.location.href = 'file:///C:/Users/49176/Downloads/Jeremias%20Website/Louisenfest/t/fallback.html';
+    }
   }
 })();
+
 
 // bg
 document.addEventListener('DOMContentLoaded', function () {
@@ -24,33 +21,22 @@ document.addEventListener('DOMContentLoaded', function () {
   const bg2MobilReg = document.getElementById('bg2-mobil-reg');
   const bg2Desktop = document.getElementById('bg2-desktop');
 
-  console.log("Script geladen");
-  console.log("bg2Mobil:", bg2Mobil);
-  console.log("bg2MobilReg:", bg2MobilReg);
-  console.log("bg2Desktop:", bg2Desktop);
-
   window.addEventListener('scroll', () => {
     const scrollTop = window.scrollY;
     const screenWidth = window.innerWidth;
 
-    console.log("ScrollY:", scrollTop);
-    console.log("Screen width:", screenWidth);
-
     // Mobilbereich
     if (screenWidth < 768) {
-      console.log("Mobil erkannt");
 
       if (bg2Mobil) {
         const fadeDistance = window.innerHeight * 0.7;
         const opacity = Math.max(1 - scrollTop / fadeDistance, 0);
-        console.log("bg2Mobil fadeDistance:", fadeDistance, " → opacity:", opacity);
         bg2Mobil.style.opacity = opacity.toFixed(2);
       }
 
       if (bg2MobilReg) {
         const fadeDistance = window.innerHeight * 0.3;
         const opacity = Math.max(1 - scrollTop / fadeDistance, 0);
-        console.log("bg2MobilReg fadeDistance:", fadeDistance, " → opacity:", opacity);
         bg2MobilReg.style.opacity = opacity.toFixed(2);
       }
     }
@@ -59,7 +45,6 @@ document.addEventListener('DOMContentLoaded', function () {
     if (screenWidth >= 768 && bg2Desktop) {
       const fadeDistance = window.innerHeight * 0.7;
       const opacity = Math.max(1 - scrollTop / fadeDistance, 0);
-      console.log("Desktop fadeDistance:", fadeDistance, " → opacity:", opacity);
       bg2Desktop.style.opacity = opacity.toFixed(2);
     }
   });
@@ -116,15 +101,4 @@ document.addEventListener('DOMContentLoaded', () => {
 
     setInitialState();
   });
-});
-
-const krone = document.querySelector('#krone-bild');
-const links = document.querySelectorAll('.main-nav ul li a');
-
-links.forEach(link => {
-  if (link.classList.contains('selected')) {
-    const rect = link.getBoundingClientRect();
-    const parentRect = document.querySelector('.main-nav').getBoundingClientRect();
-    krone.style.left = `${rect.left - parentRect.left}px`;
-  }
 });

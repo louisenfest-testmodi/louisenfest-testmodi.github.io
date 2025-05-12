@@ -138,6 +138,65 @@ h2::before {
     margin-top: 30px;
 }
 
+/* Dati */
+    .dati-h1-dp, .dati-start-2 {
+        display: none;
+    }
+
+    .dati-start {
+        display: flex;
+    }
+
+    .dati-start-2 {
+        margin-top: 12%;
+        margin-left: -5%;
+        height: 10%;
+        padding: 2%;
+        padding-bottom: 3.5%;
+
+        border-radius: 10px;
+        border-left: 1px dashed white;
+        border-top: 1px dashed white;
+        border-bottom: 1px dashed white;
+    }
+
+    .dati-start-2 span:nth-of-type(1), .dati-start-3 span:nth-of-type(1) {
+        font-size: 35px;
+        margin: 0;
+        padding: 0;
+    }
+
+    .dati-start-2 span:nth-of-type(2) {
+        font-size: 15px;
+        margin: 0;
+        margin-top: 4%;
+        margin-bottom: 10%;
+        padding: 0;
+        font-weight: bold;
+    }
+
+    .dati-start-3 div {
+        margin-top: 14%;
+        padding-bottom: 10% !important;
+        padding-top: 20px !important;
+        padding: 0;
+        font-weight: bold;
+        border-top: 1px solid white;
+    }
+
+    .dati-start-2 a, .dati-start-3 a {
+        text-decoration: none ;
+        border: 1px solid white;
+        border-radius: 5px;
+        background-color: rgba(255, 255, 255, 0.3);
+        padding: 10px;
+    }
+
+    .dati-start-2 a:hover, .dati-start-3 a:hover {
+        background-color: rgba(255, 255, 255, 0.2);
+    }
+/**/
+
 .footer-dp {
     display: none;
 }
@@ -181,13 +240,13 @@ footer a {
 .sub-form input:nth-of-type(3) {
     border: 1px solid white;
     border-radius: 2px;
-    background-color: transparent;
+    background-color: rgba(255, 255, 255, 0.2);
     color: white;
     margin-top: 10px;
 }
 
 .sub-form input:nth-of-type(3):hover {
-    background-color: rgba(255, 255, 255, 0.3);
+    background-color: rgba(255, 255, 255, 0.1);
 }
 
 .sub-form input:nth-of-type(3):focus {
@@ -555,6 +614,14 @@ section h2::after {
 
     #next-five-events .time {
         max-width: 5%;
+    }
+
+    .dati-h1-m, .dati-start-3 {
+        display: none;
+    }
+
+    .dati-h1-dp, .dati-start-2 {
+        display: block;
     }
 
     .horizontale-linie {
