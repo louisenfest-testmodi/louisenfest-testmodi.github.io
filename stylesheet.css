@@ -75,6 +75,19 @@ main {
     .toggleContent[data-expanded="true"] {
          visibility: visible;
     }
+
+    .down-btn {
+        text-decoration: none ;
+        border: 1px solid white;
+        border-radius: 5px;
+        background-color: rgba(255, 255, 255, 0.3);
+        padding: 10px;
+    }
+
+    .down-btn:hover {
+        background-color: rgba(255, 255, 255, 0.2);
+    }
+    
 /**/  
 
 h1 {
@@ -184,17 +197,6 @@ h2::before {
         border-top: 1px solid white;
     }
 
-    .dati-start-2 a, .dati-start-3 a {
-        text-decoration: none ;
-        border: 1px solid white;
-        border-radius: 5px;
-        background-color: rgba(255, 255, 255, 0.3);
-        padding: 10px;
-    }
-
-    .dati-start-2 a:hover, .dati-start-3 a:hover {
-        background-color: rgba(255, 255, 255, 0.2);
-    }
 /**/
 
 .footer-dp {
@@ -531,6 +533,10 @@ section h2::after {
        Desktop
    ================ */
 @media (min-width: 768px) {
+    body {
+        overflow-x: hidden;
+    }
+
     .bg-1 {
         background-image: url('b/bg-1-dp.png');
     }
@@ -550,12 +556,17 @@ section h2::after {
 
     main #reg {
         position: relative;
+        margin-top: -350px;
+        margin-left: 220px;
+        padding-left: 25px;
+        padding-top: 5px;
+        width: calc(100% - 250px - 2rem);
+        box-sizing: border-box;
         z-index: 5;
-        margin-top: -30%;
-        left: 210px;
-        width: 80%;
-        padding-left: 23px;
-        padding-top: 0.1px;
+    }
+
+    .content-below #reg {
+        height: 1000px;
     }
 
     main #reg::before {
@@ -672,19 +683,20 @@ section h2::after {
 
 /**/    
     .bg-2-section-reg .bg-2 .main-nav {
-        margin-top: 8%;
-        margin-left: 25%;
+        padding-top: 80px;
+        margin-left: 305px;
         display: inline-flex;
         font-size: 17.5px;
     }
 
     .bg-2-section-reg .bg-2-grundinfo {
         display: inline-flex;
-        margin-left: 25%;
-        margin-top: 0px;
-        max-width: 80%;
+        margin-left: 305px;
+        margin-top: -10px;
+        max-width: calc(100% - 250px - 2rem);
         background-color: rgba(255, 255, 255, 0.15);
         padding: 10px;
+        box-sizing: border-box;
     }
 
     .bg-2 .main-nav ul {
