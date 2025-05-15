@@ -556,8 +556,8 @@ section h2::after {
 
     main #reg {
         position: relative;
-        margin-top: -350px;
-        margin-left: 220px;
+        margin-top: -580px;
+        margin-left: 305px;
         padding-left: 25px;
         padding-top: 5px;
         width: calc(100% - 250px - 2rem);
@@ -683,15 +683,15 @@ section h2::after {
 
 /**/    
     .bg-2-section-reg .bg-2 .main-nav {
-        padding-top: 80px;
-        margin-left: 305px;
+        padding-top: 180px;
+        margin-left: 455px;
         display: inline-flex;
         font-size: 17.5px;
     }
 
     .bg-2-section-reg .bg-2-grundinfo {
         display: inline-flex;
-        margin-left: 305px;
+        margin-left: 455px;
         margin-top: -10px;
         max-width: calc(100% - 250px - 2rem);
         background-color: rgba(255, 255, 255, 0.15);
