@@ -739,7 +739,7 @@ section h2::after {
 
     .bg-2-section .bg-2-grundinfo {
         display: inline-flex;
-        margin-left: 40%;
+        margin-left: 45%;
         margin-top: 0px;
         max-width: 80%;
         background-color: rgba(255, 255, 255, 0.15);
@@ -777,8 +777,8 @@ section h2::after {
 
     /**/
     .bg-2-section .bg-2 .main-nav {
-        margin-top: 100px;
-        margin-left: 40%;
+        margin-top: 300px;
+        margin-left: 45%;
         display: inline-flex;
         font-size: 17.5px;
     }
@@ -851,4 +851,12 @@ section h2::after {
         margin-left: 355px;
     }
 
+    .bg-2-section .bg-2 .main-nav {
+        margin-top: 250px;
+        margin-left: 40%;
+    }
+
+    .bg-2-section .bg-2-grundinfo {
+        margin-left: 40%;
+    }
 }
