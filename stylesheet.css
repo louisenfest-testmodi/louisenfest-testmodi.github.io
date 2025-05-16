@@ -841,3 +841,14 @@ section h2::after {
     }     
 }
 
+
+/* ================
+        Laptop
+   ================ */
+@media (min-width: 1024px) and (max-width: 1439px) {
+    main #reg {
+        margin-top: -380px;
+        margin-left: 355px;
+    }
+
+}
