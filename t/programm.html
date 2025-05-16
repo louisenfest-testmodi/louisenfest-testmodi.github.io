@@ -91,6 +91,13 @@
                 <div class="toggleContent" id="grubers"></div>
             </section>
 
+
+            <section id="little-creatures" class="hidden-time">
+                <h2 class="toggleTrigger" data-default-open="false" data-display="block">Little-Creatures-Bühne <span class="extra-time">ab 15 Uhr</span>
+                <img class="toggle-png" src="../b/toggle-up.png" alt="Bild"></h2>
+                <div class="toggleContent" id="little-creatures"></div>
+            </section>
+            
             <section id="next-five-section" class="hidden-time">
                 <h2 class="toggleTrigger" data-default-open="false" data-display="block">Nächste 5 Acts 
                 <img class="toggle-png" src="../b/toggle-up.png" alt="Bild"></h2>
@@ -229,7 +236,7 @@
     }
 
     async function loadNextFiveEvents() {
-        const stages = ["a-park", "mondpalast", "grubers"];
+        const stages = ["a-park", "mondpalast", "grubers", "little-creatures"];
         let events = [];
 
         for (const stage of stages) {
@@ -295,6 +302,7 @@
     loadStage("a-park", "a-park");
     loadStage("mondpalast", "mondpalast");
     loadStage("grubers", "grubers");
+    loadStage("little-creatures", "little-creatures");
     loadNextFiveEvents();
     </script>
 
