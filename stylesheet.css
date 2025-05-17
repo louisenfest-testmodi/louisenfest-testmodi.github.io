@@ -113,6 +113,16 @@ h2::before {
     position: relative;
 }
 
+.anmeldeschluss {
+    height: auto;
+    width: 100%;
+    border: 1px solid white;
+}
+
+.anmeldeschluss-box-dp {
+    display: none;
+}
+
 .teil-form, .kon-form {
     background-color: rgba(0, 0, 0, 0.3);
     border-radius: 15px;
@@ -583,6 +593,21 @@ section h2::after {
         z-index: -1;
     }
 
+    .anmeldeschluss {
+        height: auto;
+        width: 20%;
+        border: 1px solid white;
+        margin-left: 10%;
+    }
+
+    .anmeldeschluss-box-dp {
+        display: flex;
+    }
+
+    .anmeldeschluss-box-m {
+        display: none;
+    }
+
     .toggleTrigger {
         cursor: pointer;
     }
@@ -596,13 +621,14 @@ section h2::after {
         max-width: 18px;
     }
 
+/* Programm */
     .programm h3 {
         margin-top: -5%;
     }
 
     .day-container {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(250px, 30%));
         gap: 2rem;
         margin-top: 2rem;
     }
@@ -615,9 +641,6 @@ section h2::after {
         margin-top: -5%;
     }
 
-    #a-park-section .day-block {        
-        max-width: 40%;
-    }
 
     #next-five-events .act {
         gap: 5rem;
@@ -626,6 +649,7 @@ section h2::after {
     #next-five-events .time {
         max-width: 5%;
     }
+/**/
 
     .dati-h1-m, .dati-start-3 {
         display: none;
