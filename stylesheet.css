@@ -18,23 +18,38 @@ main {
 }
 
 /* Grundlagen */
-    a {
+    a, .maps td {
         color: white;
         text-decoration: underline; 
         cursor: pointer;
     }
 
-    .bg-2-grundinfo a, footer a, .band a {
+    .bg-2-grundinfo a, 
+    footer a, 
+    .band a, 
+    .maps a,
+    .rave a,
+    .maps td {
         text-decoration: none;
         position: relative;
         transition: transform 0.4s ease-out;
     }
 
-    .bg-2-grundinfo a:hover::after, footer a:hover::after, .band a:hover::after {
+    .bg-2-grundinfo a:hover::after, 
+    footer a:hover::after, 
+    .band a:hover::after, 
+    .maps a:hover::after,
+    .rave a:hover::after,
+    .maps td:hover::after {
         transform: scaleX(1);
     }
 
-    .bg-2-grundinfo a::after, footer a::after, .band a::after {
+    .bg-2-grundinfo a::after, 
+    footer a::after, 
+    .band a::after, 
+    .maps a:after,
+    .rave a:after,
+    .maps td:after {
         content: "";
         position: absolute;
         bottom: 0;
@@ -113,13 +128,13 @@ h2::before {
     position: relative;
 }
 
-.anmeldeschluss {
+.plakat, .parkverbot {
     height: auto;
     width: 100%;
     border: 1px solid white;
 }
 
-.anmeldeschluss-box-dp {
+.plakat-box-dp {
     display: none;
 }
 
@@ -128,27 +143,6 @@ h2::before {
     border-radius: 15px;
     padding-left: 10px;
     padding-right: 20px;
-}
-
-.map {
-    border-radius: 10px;
-    border: 1.5px dashed white;
-    height: 300px;
-}
-
-.toggle-png {
-    width: 15px;
-    height: auto;
-    margin-bottom: 3px;
-    margin-left: 10px;
-    display: inline-block;
-}
-
-#buehnen {
-    font-size: 20px;
-    font-weight: bold;
-    text-align: center;
-    margin-top: 100px;
 }
 
 .horizontale-linie {
@@ -160,6 +154,68 @@ h2::before {
     background-color: white;
     margin-top: 30px;
 }
+
+/* Karten */
+    .map {
+        border-radius: 10px;
+        height: 300px;
+    }
+
+    .maps {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 0px auto 70px auto;
+      font-size: 20px;
+      max-width: 100%;
+      justify-content: center;
+    }
+
+    .maps > div {
+      width: 100%;
+      padding: 10px 15px;
+      border-radius: 8px;
+      color: white;
+      text-align: center;
+    }
+
+    .maps > div:nth-of-type(1) { background-color: rgba(255, 0, 0, 0.4); }
+    .maps > div:nth-of-type(2) { background-color: rgba(255, 165, 0, 0.4); }
+    .maps > div:nth-of-type(3) { background-color: rgba(255, 255, 0, 0.4); }
+    .maps > div:nth-of-type(4) { background-color: rgba(0, 128, 0, 0.4); }
+    .maps > div:nth-of-type(5) { background-color: rgba(0, 0, 255, 0.4); }
+    .maps > div:nth-of-type(6) { background-color: rgba(128, 0, 128, 0.4); }
+
+    #buehnen img, #kultur img, #sanitaer img, #jammjamm img, #cocktail img, #bier img {
+        width: 50px;
+        height: auto;
+    }
+
+    .maps img {
+      height: 30px;
+      padding-right: 10px;
+      vertical-align: middle;
+    }
+
+    .toggle-png {
+        width: 15px;
+        height: auto;
+        margin-bottom: 3px;
+        margin-left: 10px;
+        display: inline-block;
+    }
+
+    .rave li {
+        list-style: none;
+        font-size: 20px;
+    }
+
+    #buehnen, #jammjamm, #sanitaer, #cocktail, #kultur, #bier {
+        font-size: 20px;
+        font-weight: bold;
+        text-align: center;
+    }
+/**/
 
 /* Dati */
     .dati-h1-dp, .dati-start-2 {
@@ -269,6 +325,86 @@ footer a {
     display: none;
 }    
 
+
+/* ================
+       Feedback
+   ================ */
+@keyframes pfeilBewegung {
+    0%   { transform: translateX(0); }
+    50%  { transform: translateX(10px); }
+    100% { transform: translateX(0); }
+}
+
+#starContainer img {
+  width: 30px;
+  height: auto;
+  cursor: pointer;
+  margin-right: 5px;
+  vertical-align: middle;
+  display: inline-block;
+}
+
+.krone-icon {
+  width: 20px;
+  height: 20px;
+  margin-right: 2px;
+  vertical-align: middle;
+}
+
+.pfeil {
+    display: none;
+}
+
+.stars span {
+    font-size: 2em;
+    cursor: pointer;
+    color: white;
+    transition: color 0.2s;
+}
+
+.stars .selected {
+    color: gold;
+}
+
+textarea {
+    width: 100%;
+    margin-top: 10px;
+}
+
+#absendenBtn {
+    margin-left: 10%;
+    padding: 5px 10px;
+    font-size: 1em;
+    cursor: pointer;
+
+    color: white;
+    background-color: transparent;
+    border: 1px solid white;
+    border-radius: 5px;
+}
+
+#absendenBtn:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+#bewertungen {
+    margin-top: 2em;
+}
+
+#bewertungen li {
+    margin-bottom: 0.5em;
+    list-style: none;
+}
+
+.stars {
+    margin-top: 10%;
+}
+
+#kommentar {
+    margin-bottom: 40%;
+}
+
+
 /* ================
        Programm
    ================ */
@@ -303,14 +439,24 @@ section h2::after {
 .act .time {
     white-space: nowrap;
     flex-shrink: 0;
-    width: 100px;
+    width: 30px;
     font-family: Space Mono;
 }
 
+#little-creatures-section .day-block:nth-of-type(2) .act:nth-of-type(2) .time,
+#little-creatures-section .day-block:nth-of-type(2) .act:nth-of-type(3) .time,
+#little-creatures-section .day-block:nth-of-type(2) .act:nth-of-type(4) .time,
+#roh-section .day-block:nth-of-type(1) .act:nth-of-type(7) .time, 
+#roh-section .day-block:nth-of-type(1) .act:nth-of-type(8) .time {
+    color: transparent;
+}
+
 .act .band {
-    white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    word-break: break-word;
+    overflow-wrap: break-word;
+    white-space: normal;
 }
 
 .hidden-time .act .time {
@@ -593,18 +739,18 @@ section h2::after {
         z-index: -1;
     }
 
-    .anmeldeschluss {
+    .plakat, .parkverbot {
         height: auto;
         width: 20%;
         border: 1px solid white;
         margin-left: 10%;
     }
 
-    .anmeldeschluss-box-dp {
+    .plakat-box-dp {
         display: flex;
     }
 
-    .anmeldeschluss-box-m {
+    .plakat-box-m {
         display: none;
     }
 
@@ -616,10 +762,40 @@ section h2::after {
         height: 600px;
     }
 
+  .maps > div {
+    width: calc(13.666% - 10px); /* 6 pro Zeile, minus gap */
+  }
+
+    #absendenBtn {
+        margin-left: 20%;
+        padding: 10px 20px;
+    }
+
     .bg-2-grundinfo table tr:nth-of-type(1) td:nth-of-type(3), 
     .bg-2-grundinfo table tr:nth-of-type(2) td:nth-of-type(3) {
         max-width: 18px;
     }
+
+    .pfeil {
+        display: inline-block;
+        font-size: 2em;
+        color: #333;
+        animation: pfeilBewegung 1.5s ease-in-out infinite;
+        margin-left: 40%;
+    }
+
+    #absendenBtn {
+        margin-left: 3%;
+    }
+
+    .stars {
+        margin-top: 0%;
+    }
+
+    #kommentar {
+        margin-bottom: 0%;
+    }
+
 
 /* Programm */
     .programm h3 {
@@ -628,7 +804,7 @@ section h2::after {
 
     .day-container {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 30%));
+        grid-template-columns: repeat(auto-fit, minmax(300px, 30%));
         gap: 2rem;
         margin-top: 2rem;
     }
@@ -871,12 +1047,21 @@ section h2::after {
    ================ */
 @media (min-width: 1024px) and (max-width: 1439px) {
     main #reg {
-        margin-top: -380px;
-        margin-left: 355px;
+        margin-top: -350px;
+        margin-left: 27%;
+    }
+
+    .bg-2-section-reg .bg-2 .main-nav {
+        margin-top: -100px;
+        margin-left: 30%;
+    }
+
+    .bg-2-section-reg .bg-2-grundinfo {
+        margin-left: 30%;
     }
 
     .bg-2-section .bg-2 .main-nav {
-        margin-top: 250px;
+        margin-top: 100px;
         margin-left: 40%;
     }
 
