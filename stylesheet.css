@@ -172,11 +172,16 @@ h2::before {
     }
 
     .maps > div {
-      width: 100%;
-      padding: 10px 15px;
-      border-radius: 8px;
-      color: white;
-      text-align: center;
+        width: 100%;
+        padding: 10px 15px;
+        border-radius: 8px;
+        color: white;
+        text-align: center;
+        border: 1px solid transparent;
+    }
+
+    .maps > div:hover{
+        border: 1px dashed white;
     }
 
     .maps > div:nth-of-type(1) { background-color: rgba(255, 0, 0, 0.4); }
@@ -327,6 +332,30 @@ footer a {
 
 
 /* ================
+        Archiv
+   ================ */
+#gallery {
+    column-count: 2;
+    column-gap: 12px;
+}
+
+#gallery img {
+    cursor: pointer;
+    width: 100%;
+    margin-bottom: 12px;
+    border-radius: 5px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+  
+#lightbox-img {
+    width: auto; 
+    height: 90%; 
+    box-shadow: 0 0 20px #000; 
+    border-radius:0px;
+}
+
+
+/* ================
        Feedback
    ================ */
 @keyframes pfeilBewegung {
@@ -404,6 +433,78 @@ textarea {
     margin-bottom: 40%;
 }
 
+/* Feedbackback */
+    #adminFeedbacks ul {
+      list-style: none;
+      padding: 0;
+    }
+    #adminFeedbacks li {
+      background-color: rgba(255, 255, 255, 0.1);
+      margin: 0.5rem 0;
+      padding: 1rem;
+      border-radius: 8px;
+      max-width: 65%;
+    }
+
+    #adminFeedbacks p {
+      margin-top: 30px;
+    }
+
+    .sterne {
+      font-size: 1.2rem;
+      color: #f9b300;
+    }
+
+    .kommentar {
+      margin-top: 0.5rem;
+    }
+
+    #login-section input {
+      padding: 10px;
+      background-color: rgba(255, 255, 255, 0.2);
+      outline: none;
+      border: none;
+      color: white;
+      border-radius: 3px;
+    }
+
+    #login-section input:hover, #login-section input:focus {
+      border: 1px dashed white;
+    }
+
+    #login-section input::placeholder {
+        color: rgba(255, 255, 255, 0.6);
+    }
+
+    #login-button:hover {
+      border: 1px dashed white;
+      background-color: rgba(255, 255, 255, 0.1);
+    }
+
+    #login-button {
+      padding: 10px;
+      border-radius: 5px;
+      border: 1px solid none;
+      color: white;
+      background-color: rgba(255, 255, 255, 0.3);
+      margin-left: 5%;
+    }
+
+    #logout-button {
+      display: block;
+      margin-left: 50%;
+      padding: 10px;
+      border-radius: 5px;
+      border: 1px solid white;
+      color: white;
+      background-color: rgba(255, 255, 255, 0.3);
+    }
+
+    #logout-button:hover {
+      background-color: rgba(255, 255, 255, 0.1);  
+    }
+    /**/
+
 
 /* ================
        Programm
@@ -445,9 +546,7 @@ section h2::after {
 
 #little-creatures-section .day-block:nth-of-type(2) .act:nth-of-type(2) .time,
 #little-creatures-section .day-block:nth-of-type(2) .act:nth-of-type(3) .time,
-#little-creatures-section .day-block:nth-of-type(2) .act:nth-of-type(4) .time,
-#roh-section .day-block:nth-of-type(1) .act:nth-of-type(7) .time, 
-#roh-section .day-block:nth-of-type(1) .act:nth-of-type(8) .time {
+#little-creatures-section .day-block:nth-of-type(2) .act:nth-of-type(4) .time {
     color: transparent;
 }
 
@@ -620,7 +719,7 @@ section h2::after {
 }
 
 /* ================
-    Kopf Homepage
+ Kopf Homepage
    ================ */
 .bg-1 {
     position: fixed;
@@ -762,9 +861,9 @@ section h2::after {
         height: 600px;
     }
 
-  .maps > div {
-    width: calc(13.666% - 10px); /* 6 pro Zeile, minus gap */
-  }
+    .maps > div {
+        width: calc(13.666% - 10px);
+    }
 
     #absendenBtn {
         margin-left: 20%;
@@ -774,6 +873,10 @@ section h2::after {
     .bg-2-grundinfo table tr:nth-of-type(1) td:nth-of-type(3), 
     .bg-2-grundinfo table tr:nth-of-type(2) td:nth-of-type(3) {
         max-width: 18px;
+    }
+
+    #gallery {
+      column-count: 4;
     }
 
     .pfeil {
@@ -796,36 +899,10 @@ section h2::after {
         margin-bottom: 0%;
     }
 
-
-/* Programm */
-    .programm h3 {
-        margin-top: -5%;
+    #adminFeedbacks p {
+        margin-top: -30px;
     }
 
-    .day-container {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 30%));
-        gap: 2rem;
-        margin-top: 2rem;
-    }
-
-    .day-block {
-        padding: 1rem;
-    }
-
-    #mondpalast-section h3, #a-park-section h3, #next-five-section h3 {
-        margin-top: -5%;
-    }
-
-
-    #next-five-events .act {
-        gap: 5rem;
-    }
-
-    #next-five-events .time {
-        max-width: 5%;
-    }
-/**/
 
     .dati-h1-m, .dati-start-3 {
         display: none;
@@ -855,7 +932,36 @@ section h2::after {
     .sub-form input:nth-of-type(3) {
         margin-top: 0px;
     }
-    
+
+/* Programm */
+    .programm h3 {
+        margin-top: -5%;
+    }
+
+    .day-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 30%));
+        gap: 2rem;
+        margin-top: 2rem;
+    }
+
+    .day-block {
+        padding: 1rem;
+    }
+
+    #mondpalast-section h3, #a-park-section h3, #next-five-section h3 {
+        margin-top: -5%;
+    }
+
+
+    #next-five-events .act {
+        gap: 5rem;
+    }
+
+    #next-five-events .time {
+        max-width: 5%;
+    }
+/**/ 
 
 /* Header */
     .bg-2-section-reg .bg-2 {
@@ -875,11 +981,7 @@ section h2::after {
     .bg-2-section-reg img {
         height: 20px; 
         width: auto;
-    }
-
-    .bg-2-section-reg .main-nav p {
-        padding-bottom: 10px;
-    }    
+    }   
 
 /**/    
     .bg-2-section-reg .bg-2 .main-nav {
@@ -902,11 +1004,12 @@ section h2::after {
     .bg-2 .main-nav ul {
         display: flex;
         flex-direction: row;
-        margin-left: 20px;
+        margin-left: 0px;
+        padding-left: 0px;
         margin-top: 10px; 
-        margin-bottom: 0px;
         border-left: 0px solid lightgrey;   
-        text-decoration: underline;     
+        text-decoration: underline; 
+        padding-bottom: 10px;    
     }
 
     .bg-2-section-reg .bg-2-grundinfo table {
@@ -1014,7 +1117,7 @@ section h2::after {
         position: relative;
     }
 
-    .krone, .krone-verein, .krone-impressum, .krone-kontakt {
+    .krone, .krone-verein, .krone-impressum, .krone-kontakt, .krone-archiv {
         position: absolute;
         top: -13px;
         left: 30%;
@@ -1039,6 +1142,11 @@ section h2::after {
         left: 115%;
         display: block;
     }     
+
+    .krone-archiv {
+        left: 20%;
+        display: block;
+    }
 }
 
 
@@ -1067,5 +1175,14 @@ section h2::after {
 
     .bg-2-section .bg-2-grundinfo {
         margin-left: 40%;
+    }
+
+    .maps > div {
+        padding: 10px 0px;
+        width: calc(33.333% - 10px);
+    }
+
+    #logout-button {
+        margin-left: 70%;
     }
 }
