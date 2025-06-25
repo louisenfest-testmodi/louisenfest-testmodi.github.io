@@ -155,6 +155,26 @@ h2::before {
     margin-top: 30px;
 }
 
+#gallery {
+    column-count: 2;
+    column-gap: 12px;
+}
+
+#gallery img {
+    cursor: pointer;
+    width: 100%;
+    margin-bottom: 12px;
+    border-radius: 5px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+  
+#lightbox-img {
+    width: 90%; 
+    height: auto; 
+    box-shadow: 0 0 20px #000; 
+    border-radius:0px;
+}
+
 /* Karten */
     .map {
         border-radius: 10px;
@@ -329,30 +349,6 @@ footer a {
 .krone-impressum, .krone-kontakt {
     display: none;
 }    
-
-
-/* ================
-        Archiv
-   ================ */
-#gallery {
-    column-count: 2;
-    column-gap: 12px;
-}
-
-#gallery img {
-    cursor: pointer;
-    width: 100%;
-    margin-bottom: 12px;
-    border-radius: 5px;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
-}
-  
-#lightbox-img {
-    width: auto; 
-    height: 90%; 
-    box-shadow: 0 0 20px #000; 
-    border-radius:0px;
-}
 
 
 /* ================
@@ -875,6 +871,13 @@ section h2::after {
         max-width: 18px;
     }
 
+    #lightbox-img {
+        width: auto; 
+        height: 90%; 
+        box-shadow: 0 0 20px #000; 
+        border-radius:0px;
+    }
+    
     #gallery {
       column-count: 4;
     }
