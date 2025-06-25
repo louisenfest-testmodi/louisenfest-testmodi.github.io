@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     
     <link rel="icon" type="image/png" href="../favicon.ico">
-    <link rel="stylesheet" href="../stylesheet.css?v=1006" type="text/css">
+    <link rel="stylesheet" href="../stylesheet.css?v=1506" type="text/css">
     <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
@@ -33,6 +33,7 @@
                         <li><a href="programm.html">Programm</a></li>
                         <li><a href="teilnahme.html">Teilnahme</a></li>
                         <li><a href="verein.html">Verein</a></li>
+                        <li><a href="archiv.html">Archiv</a></li>
                     </ul>
                 </div>
             </div>
@@ -42,15 +43,15 @@
     <header class="header-desktop">
         <div class="bg-2-section-reg">
             <div class="bg-2" id="bg2-desktop">
-                <div class="main-nav">         
-                    <p><img src="../b/menu.png" alt="menu">Menü:</p>
-                    <ul>
-                        <li><a href="../index.html" style="text-decoration: none;">Homepage</a></li>
+
+                <div class="main-nav">
+                    <ul><li><a href="../index.html">Homepage</a></li>
                         <li><img class="krone" src="../b/krone.png" alt="Krone"><a href="programm.html">Programm</a></li>
                         <li><a href="teilnahme.html">Teilnahme</a></li>
                         <li><a href="verein.html">Verein</a></li>
-                    </ul>
+                        <li><a href="archiv.html">Archiv</a></li></ul>
                 </div>
+
                 <div class="bg-2-grundinfo">          
                       <table><tr><td><img src="../b/karte.png" alt="Karte"></td>
                                  <td>Dresden Neustadt</td>
@@ -71,16 +72,18 @@
         <div class="content-below" id="reg">
             <h1 style="margin-top: 10px">Programm</h1>
             <p class="link-before">Wer spielt wo, wann und was? Hier könnt ihr unser genaues Programm nachlesen.<br>
-            Welche Bühne ist welche? <a href="#buehnen"><u>Hier</u></a> sind alle stages kartegraphiert.</p>
+            Welche Bühne ist welche? <a href="#maps"><u>Hier</u></a> sind alle stages und das außermusikalische Programm kartegraphiert.
+            <br><br>
+            Alle Auftritte nach 23 Uhr spielen in den Innenräumen.</p>
 
-            <section id="a-park-section">
+           <!-- <section id="a-park-section">
                 <h2 class="toggleTrigger" data-default-open="true" data-display="block">Bühne A-Park
                 <img class="toggle-png" src="../b/toggle-down.png" alt="Bild"></h2>
                 <div class="toggleContent" id="a-park"></div>
-            </section>
+            </section> -->
 
             <section id="mondpalast-section">
-                <h2 class="toggleTrigger" data-default-open="false" data-display="block">Mondpalast-Bühne 
+                <h2 class="toggleTrigger" data-default-open="true" data-display="block">Mondpalast-Bühne 
                 <img class="toggle-png" src="../b/toggle-up.png" alt="Bild"></h2>
                 <div class="toggleContent" id="mondpalast"></div>
             </section>
@@ -91,11 +94,11 @@
                 <div class="toggleContent" id="grubers"></div>
             </section>
 
-            <section id="little-creatures-section">
+            <!-- <section id="lobo-section">
                 <h2 class="toggleTrigger" data-default-open="false" data-display="block">Lobo-Bühne
                 <img class="toggle-png" src="../b/toggle-up.png" alt="Bild"></h2>
-                <div class="toggleContent" id="creatures"></div>
-            </section>
+                <div class="toggleContent" id="lobo"></div>
+            </section> -->
             
             <section id="roh-section">
                 <h2 class="toggleTrigger" data-default-open="false" data-display="block">Roh-Bühne
@@ -103,8 +106,14 @@
                 <div class="toggleContent" id="roh"></div>
             </section>
 
+            <section id="talstrasse-section">
+                <h2 class="toggleTrigger" data-default-open="false" data-display="block">Talstraße-Bühne
+                <img class="toggle-png" src="../b/toggle-up.png" alt="Bild"></h2>
+                <div class="toggleContent" id="talstrasse"></div>
+            </section>
 
-            <p style="margin-top: 130px; font-size: 20px;">Zur Verfügung stehende Kategorien:</p>
+
+            <p style="margin-top: 130px; font-size: 20px;" id="maps">Zur Verfügung stehende Kategorien:</p>
 
             <div class="maps">
               <div><div class="toggleTrigger" data-target="#buehnen" data-default-open="true"><img src="../b/buenen.png" alt="Bühnen">Bühnen</div></div>
@@ -150,7 +159,7 @@
     </main>
 
 <!-- Footer -->
-    <form action="https://buttondown.com/api/emails/embed-subscribe/Louisenfest             "
+    <form action="https://buttondown.com/api/emails/embed-subscribe/LouOrga"
           method="post"
           class="sub-form">
       <p>Bleibe immer auf dem neuesten Stand mit unserem kostenlosem Newsletter:</p>   
@@ -303,9 +312,9 @@
     loadStage("a-park", "a-park");
     loadStage("mondpalast", "mondpalast");
     loadStage("grubers", "grubers");
-    loadStage("creatures", "little-creatures");
-    loadStage("el-cubanito", "el-cubanito");
+    loadStage("lobo", "lobo");
     loadStage("roh", "roh");
+    loadStage("talstrasse", "talstrasse");
 </script>
 
 

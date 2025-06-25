@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-        <title>Louisenfest DD | Mitmachen</title>
+        <title>Louisenfest DD | Archiv</title>
         <meta name="author" content="&Eacute;mile Jeremias Ruff"> 
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
         <link rel="icon" type="image/png" href="../favicon.ico">
@@ -25,20 +25,18 @@
 
   <header class="header-mobil">
     <div class="bg-2-section-reg">
-          <div class="bg-2-reg" id="bg2-mobil-reg">
+        <div class="bg-2-reg" id="bg2-mobil-reg">
 
           <div class="main-nav">          
-              <p class="toggleTrigger" data-default-open="false" data-display="block">
-              <img src="../b/menu.png" alt="menu">Men&#252;</p>
+              <p class="toggleTrigger" data-default-open="false" data-display="block"><img src="../b/menu.png" alt="menu">Men&#252;</p>
               <ul class="toggleContent">
                   <li><a href="../index.html">Homepage</a></li>
                   <li><a href="programm.html">Programm</a></li>
                   <li><a href="teilnahme.html">Teilnahme</a></li>
                   <li><a href="verein.html">Verein</a></li>
-                  <li><a href="archiv.html">Archiv</a></li>
-              </ul>
+                  <li><a href="archiv.html">Archiv</a></li></ul>
           </div>
-        
+        </div>
     </div>
    </header>
 
@@ -50,9 +48,9 @@
                 <div class="main-nav">
                     <ul><li><a href="../index.html">Homepage</a></li>
                         <li><a href="programm.html">Programm</a></li>
-                        <li><img class="krone" src="../b/krone.png" alt="Krone"><a href="teilnahme.html">Teilnahme</a></li>
+                        <li><a href="teilnahme.html">Teilnahme</a></li>
                         <li><a href="verein.html">Verein</a></li>
-                        <li><a href="archiv.html">Archiv</a></li></ul>
+                        <li><img class="krone-archiv" src="../b/krone.png" alt="Krone"><a href="archiv.html">Archiv</a></li></ul>
                 </div>
 
                 <div class="bg-2-grundinfo">          
@@ -74,34 +72,19 @@
   <main>
   <div class="content-below" id="reg">
 
-    <h1>Teilnahme</h1>
+  <h1>Archiv</h1>
+  <div id="gallery">Lade Bilder…</div>
 
-    <h2>Anwohnende</h2>
-    <p>Unter folgendem Link findest du die sogenannte Anzeige eines vorübergehnden 
-       Gaststättengewerbes aus besonderem Anlass, gemäß §2 Abs.2 Sächisches 
-       Gaststättengesetz (SächsGastG).</p>
-    <p style="margin-left: 20%;"><a href="https://www.dresden.de/media/pdf/ordnungsamt/vdr_32_505_2_Anzeige_temp_Gastgewerbe.pdf" alt="dresden.de (Externer Link)" class="down-btn">Zum Antrag</a></p>
-    <p>Die PDF sendest du per E-Mail ausgefüllt an folgende E-MailAdresse: 
-       <a href="mailto:gewerbeangelegenheiten-gaststaetten@dresden.de">gewerbeangelegenheiten-gaststaetten@dresden.de</a></p>
+  <div id="lightbox" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.8); justify-content:center; align-items:center; z-index:9999;">
+    <button id="prev" style="position:absolute; left:20px; font-size:2rem; background:none; border:none; color:white; cursor:pointer;">&#10094;</button>
+    <img id="lightbox-img">
+    <button id="next" style="position:absolute; right:20px; font-size:2rem; background:none; border:none; color:white; cursor:pointer;">&#10095;</button>
+  </div>
 
-    <h2>Standanmeldung</h2>
-    <p>Du möchtest beim Straßenfest mit einem Stand dabei sein? Super – wir freuen 
-       uns auf dich! Egal ob als Privatperson, Verein oder Gewerbetreibende*r: Die 
-       Anmeldung ist zwingend erforderlich, damit wir die Stände fair und sinnvoll 
-       planen können – ganz gleich, ob du Mitglied bist oder nicht. <br><br>
 
-    <b>Anmeldeschluss ist der 07.06.2025.</b>
-       Nach diesem Datum können wir leider keine weiteren Stände mehr berücksichtigen.</p>
-       
-       <br>
-       <a href="Lou_Anmeldeformular.pdf" download class="down-btn">Download Anmeldeformular als PDF (1,4 MB)</a> 
-    
-    <p>Einfach das Formular ausfüllen und per E-Mail an uns zurücksenden – fertig! 
-       Wenn du Fragen hast, melde dich gern jederzeit bei uns – wir helfen dir weiter.</p>
 
   </div>
   </main>
-
 
 <!-- Footer -->
     <form action="https://buttondown.com/api/emails/embed-subscribe/LouOrga"
@@ -132,5 +115,80 @@
             </ul>
     </footer>
 
-  </body>
+<script>
+  const gallerySources = [
+    'https://archiv.louisenfest.com/public/gallery.json'
+  ];
+
+  const styleClasses = ['hochformat', 'querformat', 'gross', 'mini', 'standard'];
+  const getRandomClass = () => styleClasses[Math.floor(Math.random() * styleClasses.length)];
+
+  let allImages = [];
+  let currentIndex = 0;
+
+  const gallery = document.getElementById('gallery');
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightbox-img');
+
+  function showImage(index) {
+    if (index < 0) index = allImages.length - 1;
+    if (index >= allImages.length) index = 0;
+    currentIndex = index;
+    lightboxImg.src = allImages[currentIndex];
+    lightbox.style.display = 'flex';
+  }
+
+  async function loadImages() {
+    allImages = [];
+
+    for (const src of gallerySources) {
+      try {
+        const res = await fetch(src);
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+        const json = await res.json();
+        allImages.push(...(json.images || []));
+      } catch (e) {
+        console.error('Fehler beim Laden:', src, e);
+      }
+    }
+
+    gallery.innerHTML = '';
+
+    if (allImages.length === 0) {
+      gallery.textContent = 'Keine Bilder gefunden.';
+      return;
+    }
+
+    allImages.forEach((url, index) => {
+      const img = document.createElement("img");
+      img.src = url;
+      img.alt = "Archivbild";
+
+      img.addEventListener('click', () => showImage(index));
+      gallery.appendChild(img);
+    });
+
+  }
+
+  lightbox.addEventListener('click', () => {
+    lightbox.style.display = 'none';
+    lightboxImg.src = '';
+  });
+
+  document.getElementById('prev').addEventListener('click', (e) => {
+    e.stopPropagation();
+    showImage(currentIndex - 1);
+  });
+
+  document.getElementById('next').addEventListener('click', (e) => {
+    e.stopPropagation();
+    showImage(currentIndex + 1);
+  });
+
+  loadImages();
+</script>
+
+
+
+</body>
 </html>

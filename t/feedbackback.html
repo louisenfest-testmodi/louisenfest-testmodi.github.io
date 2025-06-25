@@ -18,82 +18,6 @@
 
         <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
         <script src="../script.js"></script>
-         
-  <style>
-    #adminFeedbacks ul {
-      list-style: none;
-      padding: 0;
-    }
-    #adminFeedbacks li {
-      background-color: rgba(255, 255, 255, 0.1);
-      margin: 0.5rem 0;
-      padding: 1rem;
-      border-radius: 8px;
-      max-width: 65%;
-    }
-
-    #adminFeedbacks p {
-      margin-top: 30px;
-    }
-
-    @media (min-width: 768px) {
-      #adminFeedbacks p {
-        margin-top: -30px;
-      }
-    }
-
-    .sterne {
-      font-size: 1.2rem;
-      color: #f9b300;
-    }
-
-    .kommentar {
-      margin-top: 0.5rem;
-    }
-
-    #login-section input {
-      padding: 10px;
-      background-color: rgba(255, 255, 255, 0.2);
-      outline: none;
-      border: none;
-      color: white;
-      border-radius: 3px;
-    }
-
-    #login-section input:hover, #login-section input:focus {
-      border: 1px dashed white;
-    }
-
-    #login-button:hover {
-      border: 1px dashed white;
-      background-color: rgba(255, 255, 255, 0.1);
-    }
-
-    #login-button {
-      padding: 10px;
-      border-radius: 5px;
-      border: 1px solid none;
-      color: white;
-      background-color: rgba(255, 255, 255, 0.3);
-      margin-left: 5%;
-    }
-
-    #logout-button {
-      display: block;
-
-      margin-left: 50%;
-      padding: 10px;
-      border-radius: 5px;
-      border: 1px solid white;
-      color: white;
-      background-color: rgba(255, 255, 255, 0.3);
-    }
-
-    #logout-button:hover {
-      background-color: rgba(255, 255, 255, 0.1);  
-    }
-  </style>
-
 </head>
 <body>
   <div class="bg-1"></div>
@@ -109,6 +33,7 @@
                   <li><a href="programm.html">Programm</a></li>
                   <li><a href="teilnahme.html">Teilnahme</a></li>
                   <li><a href="verein.html">Verein</a></li>
+                  <li><a href="archiv.html">Archiv</a></li>
               </ul>
           </div>
         
@@ -120,14 +45,12 @@
         <div class="bg-2-section-reg">
             <div class="bg-2" id="bg2-desktop">
 
-                <div class="main-nav">         
-                    <p class="toggleTrigger" data-default-open="true" data-display="flex">
-                    <img src="../b/menu.png" alt="menu">Men&#252;:</p>
-                    <ul class="toggleContent">
-                        <li><a href="../index.html" style="text-decoration: none;">Homepage</a></li>
+                <div class="main-nav">
+                    <ul><li><a href="../index.html">Homepage</a></li>
                         <li><a href="programm.html">Programm</a></li>
                         <li><a href="teilnahme.html">Teilnahme</a></li>
                         <li><a href="verein.html">Verein</a></li>
+                        <li><a href="archiv.html">Archiv</a></li>
                     </ul>
                 </div>
 
@@ -170,7 +93,7 @@
   </main>
 
 <!-- Footer -->
-    <form action="https://buttondown.com/api/emails/embed-subscribe/Player33             "
+    <form action="https://buttondown.com/api/emails/embed-subscribe/LouOrga"
           method="post"
           class="sub-form">
       <p>Bleibe immer auf dem neuesten Stand mit unserem kostenlosem Newsletter:</p>   
